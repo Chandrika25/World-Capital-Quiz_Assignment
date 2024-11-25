@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>World Capitals Quiz</title>
+  <style>
+    body {
+      font-family: 'Shadows Into Light', cursive;
+      background-color:#FFA07A:;
+    }
+
+    h1 {
+      text-align: center;
+      color: darkblue;
+      margin-bottom: 20px;
+    }
+
+    #quizForm {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color:pink;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: red;
+      margin-bottom: 20px;
+    }
+
+    input[type="radio"] {
+      margin-bottom: 10px;
+    }
+
+    button {
+      font-family: 'Shadows Into Light', cursive;
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+
+    #quizForm {
+      display: none; 
+    }
+
+    .quiz-image {
+      display: block; /* Ensure images are block-level elements */
+      margin: 0 auto; /* Center the images horizontally */
+      max-width: 100%; /* Adjust maximum width for responsiveness */
+    }
+
+    .image {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <h1>World Capitals Quiz</h1>
+  <div id="info">
+    <h2>World Capitals</h2>
+    <img src="world-map.jpeg" float: right; width="300" class="image">
+    <h2>Here are some concise notions about each country's capital.</h2>
+world capitals quiz information:
+<h3>1.India:</br></h3>
+ New Delhi, India's capital, is famed for its rich history, diversified culture, and iconic buildings such as the Red Fort and India Gate.
+<h3>2.United States:</br></h3>
+ Washington, D.C., the capital of the United States, is known for its historic monuments, federal buildings, and cultural institutions such as the Smithsonian museums.
+<h3>3.Canada:</br></h3>
+Ottawa, Canada's capital, is known for its gorgeous position along the Ottawa River, Parliament Hill, and thriving cultural scene.
+<h3>4.Australia:</br></h3>
+Canberra, the country's capital, is noted for its planned layout, modern architecture, and attractions such as the Australian War Memorial and National Gallery of Australia.
+<h3>5.Brazil:</br></h3>
+Brasília, Brazil's capital, is known for its unique urban design by architect Oscar Niemeyer. Notable modernist buildings include the National Congress and Cathedral of Brasília.
+<h3>6.South Africa:</br></h3>
+Pretoria, one of South Africa's capitals, is known for its jacaranda-lined streets, historical buildings such as the Union Buildings, and diverse cultural heritage.
+<h3>7.Russia:</br></h3>
+Russia's capital, Moscow, is well-known for the Red Square, the Kremlin complex, famous sites including St. Basil's Cathedral, and a thriving nightlife and cultural scene.
+<h3>8.Argentina:</br></h3>
+Argentina's city, Buenos Aires, is renowned for its European-style buildings, fervent tango traditions, and varied food scene.
+<h3>9.Turkey:</br></h3>
+Ankara, Turkey's capital, is known for its modernity, historic sites like the Atatürk Mausoleum, and role as a political and cultural hub in the heart of Anatolia.
+<h3>10.Egypt:</br></h3>
+Cairo, the capital of Egypt, is a city rich in history, home to famous historical landmarks like the Sphinx and Giza Pyramids, busy marketplaces, and a lively street culture along the Nile River.
+    <p>Test your knowledge about world capitals by taking the quiz!</p>
+
+    <button onclick="startQuiz()"><b>Take Quiz</b></button>
+  </div>
+
+  <form id="quizForm">
+    <div id="question1">
+      <h2>Question 1: What is the capital of India?</h2>
+      <input type="radio" name="q1" value="a"> a) New Delhi<br>
+      <input type="radio" name="q1" value="b"> b) Mumbai<br>
+      <input type="radio" name="q1" value="c"> c) Kolkata<br>
+      <button type="button" onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="question2" style="display: none;">
+      <h2>Question 2: What is the capital of the United States?</h2>
+      <input type="radio" name="q2" value="a"> a) Washington, D.C.<br>
+      <input type="radio" name="q2" value="b"> b) New York City<br>
+      <input type="radio" name="q2" value="c"> c) Los Angeles<br>
+      <button type="button" onclick="prevQuestion()">Previous</button>
+      <button type="button" onclick="nextQuestion()">Next</button>
+    </div>
+    <!-- Add other questions similarly -->
+    <div id="question3" style="display: none;">
+      <h2>Question 3: What is the capital of Canada?</h2>
+      <input type="radio" name="q3" value="a"> a) Toronto<br>
+      <input type="radio" name="q3" value="b"> b) Ottawa<br>
+      <input type="radio" name="q3" value="c"> c) Montreal<br>
+      <button type="button" onclick="prevQuestion()">Previous</button>
+      <button type="button" onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="question4" style="display: none;">
+      <h2>Question 4: What is the capital of Australia?</h2>
+      <input type="radio" name="q4" value="a"> a) Sydney<br>
+      <input type="radio" name="q4" value="b"> b) Melbourne<br>
+      <input type="radio" name="q4" value="c"> c) Canberra<br>
+      <button type="button" onclick="prevQuestion()">Previous</button>
+      <button type="button" onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="question5" style="display: none;">
+      <h2>Question 5: What is the capital of Brazil?</h2>
+      <input type="radio" name="q5" value="a"> a) Brasília<br>
+      <input type="radio" name="q5" value="b"> b) Rio de Janeiro<br>
+      <input type="radio" name="q5" value="c"> c) São Paulo<br>
+      <button type="button" onclick="prevQuestion()">Previous</button>
+      <button type="button" onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="question6" style="display: none;">
+      <h2>Question 6: What is the capital of South Africa?</h2>
+      <input type="radio" name="q6" value="a"> a) Johannesburg<br>
+      <input type="radio" name="q6" value="b"> b) Pretoria<br>
+      <input type="radio" name="q6" value="c"> c) Cape Town<br>
+      <button type="button" onclick="prevQuestion()">Previous</button>
+      <button type="button" onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="question7" style="display: none;">
+      <h2>Question 7: What is the capital of Russia?</h2>
+      <input type="radio" name="q7" value="a"> a) Moscow<br>
+      <input type="radio" name="q7" value="b"> b) Saint Petersburg<br>
+      <input type="radio" name="q7" value="c"> c) Novosibirsk<br>
+      <button type="button" onclick="prevQuestion()">Previous</button>
+      <button type="button" onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="question8" style="display: none;">
+      <h2>Question 8: What is the capital of Argentina?</h2>
+      <input type="radio" name="q8" value="a"> a) Buenos Aires<br>
+      <input type="radio" name="q8" value="b"> b) Cordoba<br>
+      <input type="radio" name="q8" value="c"> c) Rosario<br>
+      <button type="button" onclick="prevQuestion()">Previous</button>
+      <button type="button" onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="question9" style="display: none;">
+      <h2>Question 9: What is the capital of Japan?</h2>
+      <input type="radio" name="q9" value="a"> a) Tokyo<br>
+      <input type="radio" name="q9" value="b"> b) Kyoto<br>
+      <input type="radio" name="q9" value="c"> c) Osaka<br>
+      <button type="button" onclick="prevQuestion()">Previous</button>
+      <button type="button" onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="question10" style="display: none;">
+      <h2>Question 10: What is the capital of Egypt?</h2>
+      <input type="radio" name="q10" value="a"> a) Cairo<br>
+      <input type="radio" name="q10" value="b"> b) Alexandria<br>
+      <input type="radio" name="q10" value="c"> c) Luxor<br>
+      <button type="button" onclick="prevQuestion()">Previous</button>
+      <p>Are you sure you want to submit the quiz?</p>
+      <button type="button" onclick="submitQuiz()">Submit</button>
+    </div>
+  </form>
+
+  <div id="result" style="display: none;">
+    <h2>Your Results</h2>
+    <p id="score"></p>
+  </div>
+
+  <script>
+    let currentQuestion = 1;
+    let score = 0;
+
+    function startQuiz() {
+      document.getElementById('info').style.display = 'none';
+      document.getElementById('quizForm').style.display = 'block';
+      showQuestion(currentQuestion);
+    }
+
+    function showQuestion(questionNumber) {
+      const questions = document.querySelectorAll('.question');
+      questions.forEach((question) => {
+        question.style.display = 'none';
+      });
+      document.getElementById(`question${questionNumber}`).style.display = 'block';
+    }
+
+    function nextQuestion() {
+      document.getElementById(`question${currentQuestion}`).style.display = 'none';
+      currentQuestion++;
+
+      if (currentQuestion <= 10 /* Total number of questions */) {
+        showQuestion(currentQuestion);
+      } else {
+        document.getElementById('submitBtn').style.display = 'block';
+      }
+    }
+
+    function prevQuestion() {
+      document.getElementById(`question${currentQuestion}`).style.display = 'none';
+      currentQuestion--;
+
+      showQuestion(currentQuestion);
+
+      if (currentQuestion === 1) {
+        document.getElementById('prevBtn').style.display = 'none';
+      }
+
+      if (currentQuestion < 10) {
+        document.getElementById('nextBtn').style.display = 'block';
+        document.getElementById('submitBtn').style.display = 'none';
+      }
+    }
+
+    function submitQuiz() {
+      const form = document.getElementById('quizForm');
+      const formData = new FormData(form);
+      let userAnswers = [];
+
+      for (const entry of formData.entries()) {
+        userAnswers.push(entry[1]);
+      }
+
+      // Check answers
+      if (userAnswers[0] === 'a') {
+        score++;
+      }
+      if (userAnswers[1] === 'a') {
+        score++;
+      }
+      if (userAnswers[2] === 'b') {
+        score++;
+      }
+      if (userAnswers[3] === 'c') {
+        score++;
+      }
+      if (userAnswers[4] === 'a') {
+        score++;
+      }
+      if (userAnswers[5] === 'b') {
+        score++;
+      }
+      if (userAnswers[6] === 'a') {
+        score++;
+      }
+      if (userAnswers[7] === 'a') {
+        score++;
+      }
+      if (userAnswers[8] === 'a') {
+        score++;
+      }
+      if (userAnswers[9] === 'a') {
+        score++;
+      }
+
+      document.getElementById('result').style.display = 'block';
+      document.getElementById('score').innerHTML = `You scored ${score} out of 10.`;
+    }
+  </script>
+</body>
+</html>
